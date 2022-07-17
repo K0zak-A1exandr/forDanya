@@ -9,3 +9,4 @@
 void solve_quadratic();
 void solve_discr();
 int solve_square();
+int solver();
