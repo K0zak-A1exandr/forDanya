@@ -1,11 +1,10 @@
+
+#define EPSILON 0.00001
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <assert.h>
-double a  = NAN;
-double b  = NAN;
-double c  = NAN;
-double x2 = NAN;
-double x1 = NAN;
 enum NRoots_e
 {
     INF_ROOTS     = 4,
@@ -16,27 +15,15 @@ enum NRoots_e
 };
 
 
-int main()
-{   
-   printf("             \n"
-           "a*x^2+b*x+c  \n"
-           "enter a b c: \n");
-    solver();
-}
+
+
 int is_zero(double u)
 {
-    return fabs(u) < 0.000001;
+    return fabs(u) < EPSILON;
 }
 
-int solver()
+int solver(double a, double b, double c, double *x1, double *x2)
 {   
-
-
-    double a  = NAN;
-    double b  = NAN;
-    double c  = NAN;
-    double x2 = NAN;
-    double x1 = NAN;
 int result = scanf ("%lg %lg %lg", &a, &b, &c);
     if (result < 3)
     {
