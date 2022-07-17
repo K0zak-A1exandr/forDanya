@@ -1,14 +1,10 @@
+
+#define EPSILON 0.00001
+
 #include <stdio.h>
+#include <stdlib.h>
 #include <math.h>
 #include <assert.h>
-#include "quadratic.h"
-
-double a  = NAN;
-double b  = NAN;
-double c  = NAN;
-double x2 = NAN;
-double x1 = NAN;
-
 
 
 int main()
