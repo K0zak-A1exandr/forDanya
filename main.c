@@ -19,9 +19,8 @@ int main()
     double c = 0;
     double x1 = 0;
     double x2 = 0;
+    int giga = unit_test(a, b, c, &x1, &x2);
     int numsRot = solver(a, b, c, &x1, &x2);
-    
-    int unit_test();
 
     return 0;
 }
