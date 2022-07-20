@@ -1,12 +1,14 @@
+#ifndef QUADRATIC_H_
+#define QUADRATIC_H_
 
-#define EPSILON 0.00001
+int solver(double a, double b, double c, double *x1, double *x2);
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-#include <assert.h>
+void solve_quadratic(); // TODO
 
-void solve_quadratic();
-void solve_discr();
-int solve_square();
-int solver();
+void solve_discr(); // TODO
+
+int solve_square(double a, double b, double c, double *x1, double *x2);
+
+int is_zero(double u);
+
+#endif // QUADRATIC_H_
