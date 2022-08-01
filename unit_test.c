@@ -4,41 +4,48 @@
 #include <assert.h>
 #include "quadratic.h"
 #include "unit_test.h"
+#include <stdlib.h>
+
+//TODO clang format
+
 
 int unit_test()
-{
-    double tests[10][6] = {
-        {1,  4,  2,  -0.585786, -3.41421,  2}, // 1
-        {0,  0,  0,  0,         0,         -1}, // 2
-        {0,  0,  1,  0,         0,         -2}, // 3
-        {1,  1,  1,  0,         0,         -2}, // 4
-        {1,  1,  1,  0,         1,         -2}, // 5 error
-        {1,  12, 12, -1.10102,  -10.899,   2}, // 6
-        {2,  5,  3,  -1,        -1.5,      2}, // 7
-        {12, 23, 11, -0.916667, -1,        2}, // 8
-        {0,  5,  3,  -1.66667,  0,         1}, // 9
-        {3,  65, 32, -0.504033, -21.1626,  2}  // 10
-    };// a,  b,  c,  x1,        x2,        n_ans
-
+{   
+    double a = NAN;
+    double b = NAN;
+    double c = NAN;
+    double x_1_expected = NAN;
+    double x_2_expected = NAN;
+    int n_ans_expected = 0;
+    double x_1 = NAN;
+    double x_2 = NAN;
+    int n_tests;
+    int ** tests;
+    int i;
+    int j;
+    
+    FILE* input_file = fopen("test.txt", "r");
+    fscanf(input_file, "%d", &n_tests);
+    printf("got %d tests\n", n_tests);
+    
     for (int i = 0; i < 10; i++)
-    {
-        double x1 = 0, x2 = 0;
+    {   
+        fscanf(input_file, "%lf %lf %lf %lf %lf %d", &a, &b, &c, &x_1_expected, &x_2_expected, &n_ans_expected);
+        
+        int n_ans = solver (a, b, c, &x_1, &x_2 );
 
-        int n_ans = solver (tests[i][0], tests[i][1], tests[i][2], &x1, &x2);
-
-        //printf("got %d roots (ref. %lg), x1 = %lg (ref. %lg), x2 = %lg (ref. %lg)\n\t", n_ans, tests[i][5], x1, tests[i][3], x2, tests[i][4]);
-
-        if (tests[i][5] == n_ans &&
-            is_zero (x1 - tests[i][3]) &&
-            is_zero (x2 - tests[i][4]))
+        printf("got %d roots , x1 = %lg , x2 = %lg \n\t", n_ans, x_1, x_2);
+        if (n_ans_expected == n_ans &&
+            is_zero (x_1_expected - x_1) &&
+            is_zero (x_2_expected - x_2))
 
             printf ("Test number %3d - OK\n", i+1);
         else
         {
             printf ("Test number %3d - ERROR\n", i+1);
-            printf ("In: a=%lg b=%lg c=%lg\n", tests[i][0], tests[i][1], tests[i][2]);
-            printf ("Expected out: x1=%lg x2=%lg n_roots=%d\n", tests[i][3], tests[i][4], tests[i][5]);
-            printf ("Real     out: x1=%lg x2=%lg n_roots=%d\n\n", x1, x2, n_ans);
+            printf ("In: a=%lg b=%lg c=%lg\n", a, b,c);
+            printf ("Expected out: x1=%lg x2=%lg n_roots=%d\n", x_1_expected, x_2_expected, n_ans_expected);
+            printf ("Real     out: x1=%lg x2=%lg n_roots=%d\n\n", x_1, x_2, n_ans);
         }
     }
 }
