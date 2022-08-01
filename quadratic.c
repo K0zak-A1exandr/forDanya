@@ -22,6 +22,7 @@ int solver(double a, double b, double c, double *x1, double *x2)
     assert(a != NAN); //TODO три assert'a с указателями    // проверка на ввод числа, иначе выдать ошибку (или попросить заново ввести)
     assert(b != NAN);
     assert(c != NAN);
+    
     int numRoots = solve_square(a, b, c, x1, x2); //assert через define
     print_roots (numRoots, x1, x2);
    /* switch(numRoots)
@@ -45,7 +46,8 @@ int solver(double a, double b, double c, double *x1, double *x2)
 }
 
 int solve_square(double a, double b, double c, double *x1, double *x2)
-{   
+{
+    int result = scanf ("%lg %lg %lg", &a, &b, &c);   
     if (result < 3)
     {                                                                           //TODO solver_from_keyboard
         printf("Did your cat walk on the keyboard?\n");
@@ -106,16 +108,16 @@ int solve_square(double a, double b, double c, double *x1, double *x2)
         }
     }    
 }
-void print_roots (double x1, double x2) {
+double print_roots (int numRoots, double x1, double x2) {
     switch (numRoots) 
     {
     printf(" No Solution\n");
             break;
         case ONE_ROOTS:
-            printf(" x = %lg\n", *x1 );
+            printf(" x = %lg\n", x1 );
             break;
         case TWO_ROOTS:
-            printf(" x1 = %lg\n x2 = %lg\n", *x1, *x2); 
+            printf(" x1 = %lg\n x2 = %lg\n", x1, x2); 
             break;
         case INF_ROOTS:
             printf(" Any number\n");
