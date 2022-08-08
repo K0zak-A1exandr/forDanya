@@ -16,20 +16,28 @@ double coef_read()
     int numb_in = -1;
     char scan_end = NAN;
 
-    numb_in = scanf ("%lg", &x);
-    scan_end = getchar();
-
-    if (!isfinite (x) || numb_in != 1 || scan_end != '\n')
+    while(1)
     {
-        printf ("\nWrong input\n");
-        clear_input ();
+        printf("coef = ");
+        numb_in = scanf ("%lg", &x);
+        scan_end = getchar();
+
+        if (!isfinite (x) || numb_in != 1 || scan_end != '\n')
+        {
+            printf ("Wrong input\n");
+            clear_input ();
+        }
+        else
+            return x;
     }
-    return x;
+    return NAN;
 }
 
-int clear_input ()
+
+
+void clear_input ()
 {
-    while (getchar () != '\n') ;
+    while (getchar () != '\n') { ; }
 }
 
 int is_zero(double u)
@@ -40,16 +48,16 @@ int is_zero(double u)
 
 int solver(double a, double b, double c, double *x1, double *x2)
 {
+    a = coef_read();
+    b = coef_read();
+    c = coef_read();
+    printf("\n\ncoefs: %lg %lg %lg", a, b, c);
     int numRoots = solve_square(a, b, c, x1, x2); 
     print_roots (numRoots, *x1, *x2);
 }
 
 int solve_square(double a, double b, double c, double *x1, double *x2)
-{   
-    b = coef_read;
-    c = coef_read;   
-    a = coef_read;
-
+{
     if(is_zero(a))
     {
         if(is_zero(b))
