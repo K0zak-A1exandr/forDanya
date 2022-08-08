@@ -10,54 +10,80 @@
 #include "quadratic.h"
 
 
+double coef_read()
+{
+    double x = NAN;
+    int numb_in = -1;
+    char scan_end = NAN;
 
+    numb_in = scanf ("%lg", &x);
+    scan_end = getchar();
+
+    if (!isfinite (x) || numb_in != 1 || scan_end != '\n')
+    {
+        printf ("\nWrong input\n");
+        clear_input ();
+    }
+    return x;
+}
+
+int clear_input ()
+{
+    while (getchar () != '\n') ;
+}
 
 int is_zero(double u)
 {
+    double EPSILON = 0.000001;
     return fabs(u) < EPSILON;
 }
 
 int solver(double a, double b, double c, double *x1, double *x2)
 {
-    assert(a != NAN); //TODO три assert'a с указателями    // проверка на ввод числа, иначе выдать ошибку (или попросить заново ввести)
-    assert(b != NAN);
-    assert(c != NAN);
-    
-    int numRoots = solve_square(a, b, c, x1, x2); //assert через define
-    print_roots (numRoots, x1, x2);
-   /* switch(numRoots)
-    {
-        case NO_ROOTS:
-            printf(" No Solution\n");
-            break;
-        case ONE_ROOTS:
-            printf(" x = %lg\n", *x1 );
-            break;
-        case TWO_ROOTS:
-            printf(" x1 = %lg\n x2 = %lg\n", *x1, *x2); 
-            break;
-        case INF_ROOTS:
-            printf(" Any number\n");
-            break;
-        default:
-            printf("Big brain move\n");
-            return 4; //TODO enum с error'om
-    }*/
+    int numRoots = solve_square(a, b, c, x1, x2); 
+    print_roots (numRoots, *x1, *x2);
 }
 
 int solve_square(double a, double b, double c, double *x1, double *x2)
-{
-    int result = scanf ("%lg %lg %lg", &a, &b, &c);   
-    if (result < 3)
-    {                                                                           //TODO solver_from_keyboard
-        printf("Did your cat walk on the keyboard?\n");
-        return 0;
+{   
+    b = coef_read;
+    c = coef_read;   
+    a = coef_read;
+
+    if(is_zero(a))
+    {
+        if(is_zero(b))
+        {
+            if(is_zero(c))
+            {
+                return INF_ROOTS;
+            }
+            else
+            {
+                return NO_ROOTS;
+            }
+        }
+        else
+        {  
+            //printf("%lg %lg\n", b, c);
+            *x1 = - c / b; 
+            return ONE_ROOTS;
+        }
     }
     else
     {
-        if(is_zero(a))
+        double discr = (b * b - 4 * a * c);
+        double sqrtD = sqrt(discr);
+        double two_a = 2 * a;
+        if (discr > 0)
         {
-            if(is_zero(b))
+            *x1 = ( - b + sqrtD) / two_a; 
+            *x2 = ( - b - sqrtD) / two_a;
+            return TWO_ROOTS;
+        }
+        else
+        {
+            if(is_zero(discr))
             {
                 if(is_zero(c))
                 {
@@ -65,53 +91,22 @@ int solve_square(double a, double b, double c, double *x1, double *x2)
                 }
                 else
                 {
-                    return NO_ROOTS;
+                    *x1 = *x2 = - b / (2 * a);  
+                    return TWO_ROOTS;
                 }
             }
             else
             {  
-                printf("%lg %lg\n", b, c);
-                *x1 = - c / b; 
-                return ONE_ROOTS;
+                return NO_ROOTS;
             }
         }
-        else
-        {
-            double discr = (b * b - 4 * a * c);
-            double sqrtD = sqrt(discr);
-            double two_a = 2 * a;
-            if (discr > 0)
-            {
-                *x1 = ( - b + sqrtD) / two_a; //TODO в переменную занести discr и по хорошему 2а
-                *x2 = ( - b - sqrtD) / two_a;
-                return TWO_ROOTS;
-            }
-            else
-            {
-                if(is_zero(discr))
-                {
-                    if(is_zero(c))
-                    {
-                        return INF_ROOTS;
-                    }
-                    else
-                    {
-                        *x1 = *x2 = - b / (2 * a);  
-                        return TWO_ROOTS;
-                    }
-                }
-                else
-                {  
-                    return NO_ROOTS;
-                }
-            }
-        }
-    }    
+    }
 }
-double print_roots (int numRoots, double x1, double x2) {
+int print_roots (int numRoots, double x1, double x2) {
     switch (numRoots) 
     {
-    printf(" No Solution\n");
+        case NO_ROOTS:
+            printf(" No Solution\n");
             break;
         case ONE_ROOTS:
             printf(" x = %lg\n", x1 );
@@ -127,4 +122,3 @@ double print_roots (int numRoots, double x1, double x2) {
             break;
     }
 }
-
