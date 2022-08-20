@@ -1,0 +1,51 @@
+\hypertarget{quadratic_8h}{}\doxysection{Файл quadratic.\+h}
+\label{quadratic_8h}\index{quadratic.h@{quadratic.h}}
+\doxysubsection*{Перечисления}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{quadratic_8h_aaace458ae5a73bc7602a3a8aeef9106e}\label{quadratic_8h_aaace458ae5a73bc7602a3a8aeef9106e}} 
+enum \mbox{\hyperlink{quadratic_8h_aaace458ae5a73bc7602a3a8aeef9106e}{NRoots\+\_\+e}} \{ {\bfseries NO\+\_\+\+ROOTS} = 0
+, {\bfseries ONE\+\_\+\+ROOTS} = 1
+, {\bfseries TWO\+\_\+\+ROOTS} = 2
+, {\bfseries INF\+\_\+\+ROOTS} = 3
+ \}
+\begin{DoxyCompactList}\small\item\em Говорящие константы, отвечающие за количество решений ~\newline
+ \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Функции}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{quadratic_8h_a88cf816ed8d6d4b24d46f181426c76ff}\label{quadratic_8h_a88cf816ed8d6d4b24d46f181426c76ff}} 
+int \mbox{\hyperlink{quadratic_8h_a88cf816ed8d6d4b24d46f181426c76ff}{solver}} (double a, double b, double c, double $\ast$x1, double $\ast$x2)
+\begin{DoxyCompactList}\small\item\em Функция-\/отец, связывающая другие в одно целое Заносит значения a b c в функцию, решающую квадратное уравнение Содержит ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_a8569cc6e95a5c96cbaaec04caf4e1e9d}\label{quadratic_8h_a8569cc6e95a5c96cbaaec04caf4e1e9d}} 
+void \mbox{\hyperlink{quadratic_8h_a8569cc6e95a5c96cbaaec04caf4e1e9d}{solve\+\_\+discr}} ()
+\begin{DoxyCompactList}\small\item\em функция, решающая дискриминант ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_aaff927290f6b2ccdca47881b30bf253a}\label{quadratic_8h_aaff927290f6b2ccdca47881b30bf253a}} 
+int \mbox{\hyperlink{quadratic_8h_aaff927290f6b2ccdca47881b30bf253a}{solve\+\_\+square}} (double a, double b, double c, double $\ast$x1, double $\ast$x2)
+\begin{DoxyCompactList}\small\item\em функция, решающая квадратное уравнение ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_ad77c3a6c18f214ec5d2e378fd32ea0c2}\label{quadratic_8h_ad77c3a6c18f214ec5d2e378fd32ea0c2}} 
+int \mbox{\hyperlink{quadratic_8h_ad77c3a6c18f214ec5d2e378fd32ea0c2}{is\+\_\+zero}} (double u)
+\begin{DoxyCompactList}\small\item\em Сравнивает значение с нулём ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_a6770844b3e37a56f5ea37416b6ad2720}\label{quadratic_8h_a6770844b3e37a56f5ea37416b6ad2720}} 
+int \mbox{\hyperlink{quadratic_8h_a6770844b3e37a56f5ea37416b6ad2720}{print\+\_\+roots}} (int num\+Roots, double x1, double x2)
+\begin{DoxyCompactList}\small\item\em функция, которая выводит решения ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_a450c384475c1a3f201cd608a0be57917}\label{quadratic_8h_a450c384475c1a3f201cd608a0be57917}} 
+int \mbox{\hyperlink{quadratic_8h_a450c384475c1a3f201cd608a0be57917}{solve\+\_\+linear}} (double b, double c, double $\ast$x1)
+\begin{DoxyCompactList}\small\item\em Подфункция, решающая линейное уравнение ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_a30fe8b7bc9a5f53b6bbf1222662e7054}\label{quadratic_8h_a30fe8b7bc9a5f53b6bbf1222662e7054}} 
+double \mbox{\hyperlink{quadratic_8h_a30fe8b7bc9a5f53b6bbf1222662e7054}{coef\+\_\+read}} ()
+\begin{DoxyCompactList}\small\item\em функция, котрая считывает коефициенты ~\newline
+ \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{quadratic_8h_acb4a29259a5e0ebfdd9ccc8428a54570}\label{quadratic_8h_acb4a29259a5e0ebfdd9ccc8428a54570}} 
+void \mbox{\hyperlink{quadratic_8h_acb4a29259a5e0ebfdd9ccc8428a54570}{flush\+\_\+input\+\_\+buffer}} ()
+\begin{DoxyCompactList}\small\item\em очищает буфер ввода \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Подробное описание}
+Программа, решающая квадратное уравнение 

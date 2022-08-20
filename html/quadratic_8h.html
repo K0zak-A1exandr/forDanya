@@ -1,0 +1,135 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Quadratic: Файл quadratic.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Quadratic
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Создано системой Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Поиск','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Поиск');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+</div><!-- top -->
+<div class="header">
+  <div class="summary">
+<a href="#enum-members">Перечисления</a> &#124;
+<a href="#func-members">Функции</a>  </div>
+  <div class="headertitle">
+<div class="title">Файл quadratic.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+
+<p><a href="quadratic_8h_source.html">См. исходные тексты.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
+Перечисления</h2></td></tr>
+<tr class="memitem:aaace458ae5a73bc7602a3a8aeef9106e"><td class="memItemLeft" align="right" valign="top"><a id="aaace458ae5a73bc7602a3a8aeef9106e"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#aaace458ae5a73bc7602a3a8aeef9106e">NRoots_e</a> { <b>NO_ROOTS</b> = 0
+, <b>ONE_ROOTS</b> = 1
+, <b>TWO_ROOTS</b> = 2
+, <b>INF_ROOTS</b> = 3
+ }</td></tr>
+<tr class="memdesc:aaace458ae5a73bc7602a3a8aeef9106e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Говорящие константы, отвечающие за количество решений <br  />
+ <br /></td></tr>
+<tr class="separator:aaace458ae5a73bc7602a3a8aeef9106e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Функции</h2></td></tr>
+<tr class="memitem:a88cf816ed8d6d4b24d46f181426c76ff"><td class="memItemLeft" align="right" valign="top"><a id="a88cf816ed8d6d4b24d46f181426c76ff"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#a88cf816ed8d6d4b24d46f181426c76ff">solver</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
+<tr class="memdesc:a88cf816ed8d6d4b24d46f181426c76ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Функция-отец, связывающая другие в одно целое Заносит значения a b c в функцию, решающую квадратное уравнение Содержит <br  />
+ <br /></td></tr>
+<tr class="separator:a88cf816ed8d6d4b24d46f181426c76ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8569cc6e95a5c96cbaaec04caf4e1e9d"><td class="memItemLeft" align="right" valign="top"><a id="a8569cc6e95a5c96cbaaec04caf4e1e9d"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#a8569cc6e95a5c96cbaaec04caf4e1e9d">solve_discr</a> ()</td></tr>
+<tr class="memdesc:a8569cc6e95a5c96cbaaec04caf4e1e9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция, решающая дискриминант <br  />
+ <br /></td></tr>
+<tr class="separator:a8569cc6e95a5c96cbaaec04caf4e1e9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaff927290f6b2ccdca47881b30bf253a"><td class="memItemLeft" align="right" valign="top"><a id="aaff927290f6b2ccdca47881b30bf253a"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#aaff927290f6b2ccdca47881b30bf253a">solve_square</a> (double a, double b, double c, double *x1, double *x2)</td></tr>
+<tr class="memdesc:aaff927290f6b2ccdca47881b30bf253a"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция, решающая квадратное уравнение <br  />
+ <br /></td></tr>
+<tr class="separator:aaff927290f6b2ccdca47881b30bf253a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad77c3a6c18f214ec5d2e378fd32ea0c2"><td class="memItemLeft" align="right" valign="top"><a id="ad77c3a6c18f214ec5d2e378fd32ea0c2"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#ad77c3a6c18f214ec5d2e378fd32ea0c2">is_zero</a> (double u)</td></tr>
+<tr class="memdesc:ad77c3a6c18f214ec5d2e378fd32ea0c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Сравнивает значение с нулём <br  />
+ <br /></td></tr>
+<tr class="separator:ad77c3a6c18f214ec5d2e378fd32ea0c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6770844b3e37a56f5ea37416b6ad2720"><td class="memItemLeft" align="right" valign="top"><a id="a6770844b3e37a56f5ea37416b6ad2720"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#a6770844b3e37a56f5ea37416b6ad2720">print_roots</a> (int numRoots, double x1, double x2)</td></tr>
+<tr class="memdesc:a6770844b3e37a56f5ea37416b6ad2720"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция, которая выводит решения <br  />
+ <br /></td></tr>
+<tr class="separator:a6770844b3e37a56f5ea37416b6ad2720"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a450c384475c1a3f201cd608a0be57917"><td class="memItemLeft" align="right" valign="top"><a id="a450c384475c1a3f201cd608a0be57917"></a>
+int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#a450c384475c1a3f201cd608a0be57917">solve_linear</a> (double b, double c, double *x1)</td></tr>
+<tr class="memdesc:a450c384475c1a3f201cd608a0be57917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Подфункция, решающая линейное уравнение <br  />
+ <br /></td></tr>
+<tr class="separator:a450c384475c1a3f201cd608a0be57917"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a30fe8b7bc9a5f53b6bbf1222662e7054"><td class="memItemLeft" align="right" valign="top"><a id="a30fe8b7bc9a5f53b6bbf1222662e7054"></a>
+double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#a30fe8b7bc9a5f53b6bbf1222662e7054">coef_read</a> ()</td></tr>
+<tr class="memdesc:a30fe8b7bc9a5f53b6bbf1222662e7054"><td class="mdescLeft">&#160;</td><td class="mdescRight">функция, котрая считывает коефициенты <br  />
+ <br /></td></tr>
+<tr class="separator:a30fe8b7bc9a5f53b6bbf1222662e7054"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acb4a29259a5e0ebfdd9ccc8428a54570"><td class="memItemLeft" align="right" valign="top"><a id="acb4a29259a5e0ebfdd9ccc8428a54570"></a>
+void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="quadratic_8h.html#acb4a29259a5e0ebfdd9ccc8428a54570">flush_input_buffer</a> ()</td></tr>
+<tr class="memdesc:acb4a29259a5e0ebfdd9ccc8428a54570"><td class="mdescLeft">&#160;</td><td class="mdescRight">очищает буфер ввода <br /></td></tr>
+<tr class="separator:acb4a29259a5e0ebfdd9ccc8428a54570"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Подробное описание</h2>
+<div class="textblock"><p>Программа, решающая квадратное уравнение </p>
+</div></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Создано системой&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>
